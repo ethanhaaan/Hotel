@@ -18,10 +18,11 @@ public class HotelLoader {
 			Scanner scanobj = new Scanner(new File(path));
 			this.rooms = scanobj.nextLine().split(" ");
 			while(scanobj.hasNextLine()) {
-				roomdata.add(scanobj.nextLine().split(" "));
+				roomdata.add(scanobj.nextLine().split(" > "));
 			}
 		}
 		catch (FileNotFoundException e) {
+			System.out.println("Unsuccessful");
 		}
 		this.roomdata = roomdata;
 	}
