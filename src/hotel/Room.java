@@ -79,7 +79,7 @@ public class Room {
 		if(hasWest())
 			W = "W";
 		System.out.printf("%S%n", name);
-		System.out.printf(" ---%s---%n|       |%n|       |%n%s       %s%n|       |%n|       |%n ---%s---%n", N, W, E, S);
+		System.out.printf(" ---%s--- %n|       |%n|       |%n%s       %s%n|       |%n|       |%n ---%s---%n", N, W, E, S);
 		
 	}
 	

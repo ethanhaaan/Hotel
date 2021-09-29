@@ -9,6 +9,10 @@ public class Hotel {
 	public static void main(String[] args) {
 		List<Room> rooms = new ArrayList<Room>();
 		HotelLoader loader = new HotelLoader();
+		if(args.length != 1) {
+			System.out.println("No Level File Specified");
+			return;
+		}
 		loader.load(args[0]);
 		
 		for(String[] i : loader.getRoomData()) {
@@ -44,7 +48,10 @@ public class Hotel {
 		currentRoom.printRoom();
 		while(scanobj.hasNext()) {
 			String cmd = scanobj.next();
-			if(cmd.equalsIgnoreCase("north")) {
+			if(cmd.equalsIgnoreCase("quit")) {
+				return;
+			}
+			else if(cmd.equalsIgnoreCase("north")) {
 				if(!currentRoom.hasNorth()) {
 					System.out.println("No Path This Way");
 					continue;
@@ -81,6 +88,9 @@ public class Hotel {
 					currentRoom = currentRoom.getWest();
 
 				}
+			}
+			else {
+				System.out.println("What?");
 			}
 			currentRoom.printRoom();
 			
